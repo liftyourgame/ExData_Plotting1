@@ -1,5 +1,5 @@
 library(dplyr)
-data <- read.table("./data/household_power_consumption.txt", header=TRUE, sep=";")
+data <- read.table("./data/household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
 
 data$DateTime<-as.POSIXct(paste(data$Date, data$Time), format="%d/%m/%Y %H:%M:%S")
 

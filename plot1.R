@@ -1,5 +1,5 @@
 library(dplyr)
-data <- read.table("./data/household_power_consumption.txt", header=TRUE, sep=";")
+data <- read.table("./data/household_power_consumption.txt", header=TRUE, sep=";", na.strings = "?")
 
 data$Date<-as.Date(data$Date, format="%d/%m/%Y")
 data$Time<-strptime(data$Time, format = "%H:%M:%S")
